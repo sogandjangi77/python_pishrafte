@@ -1,0 +1,18 @@
+def is_even(number):
+    return number % 2 == 0
+
+def main():
+    # Get input from the user
+    user_input = input("Please enter a list of numbers separated by spaces: ")
+    
+    # Convert input to a list of integers
+    numbers = list(map(int, user_input.split()))
+    
+    # Filter even numbers
+    even_numbers = list(filter(is_even, numbers))
+    
+    # Display even numbers
+    print("Even numbers:", even_numbers)
+
+if name == "__main__":
+    main()
