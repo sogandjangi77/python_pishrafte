@@ -1,0 +1,19 @@
+python
+import xml.etree.ElementTree as ET
+
+def read_xml(file_path):
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+
+        for task in root.findall('task'):
+            title = task.find('title').text
+            date = task.find('date').text
+            print(f'Title: {title}')
+            print(f'Date: {date}')
+            print('---')
+    except Exception as e:
+        print(f'Error: {e}')
+
+file_path = input("Please enter the XML file path")
+read_xml(file_path)
