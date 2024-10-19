@@ -1,0 +1,16 @@
+import json
+
+def create_company_intro(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+
+        sector = data.get('sector', 'N/A')
+        full_time_employees = data.get('fullTimeEmployees', 'N/A')
+        long_business_summary = data.get('longBusinessSummary', 'N/A')
+        city = data.get('city', 'N/A')
+        country = data.get('country', 'N/A')
+        phone = data.get('phone', 'N/A')
+
+        intro_text = (
+            f"Our company is one of the leading companies in the {sector} sector located in {city}, {country}. "
